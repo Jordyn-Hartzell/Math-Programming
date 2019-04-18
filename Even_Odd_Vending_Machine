@@ -1,0 +1,24 @@
+# obtain user input for number
+num=int(input("What is your number?"))
+
+# if number is even
+if num%2==0:
+  # display number is even
+  print(f"{num} is even.")
+  # assign even parity
+  parity="even"
+# if number is odd
+else:
+  # display number is odd
+  print(f"\n{num} is odd.")
+  # assign odd parity
+  parity="odd"
+
+print(f"The next 9 {parity} numbers are:")
+
+# loop to find next 9 even/odd numbers
+for i in range (9):
+  # increment input number by 2
+  num+=2
+  # print next even/odd number
+  print(f"{i+1}: {num}")
