@@ -1,0 +1,27 @@
+import math
+import matplotlib.pyplot as plt
+
+def dif_y(a,b):
+  return a-b**2
+
+x_in=float(input('Starting x-value: '))
+y_in=float(input('Starting y-value: '))
+x_end=float(input('Ending x-value: '))
+n=int(input('Steps:'))
+
+x_array=[x_in]
+y_array=[y_in]
+delta_x=(x_end-x_in)/n
+
+for i in range(0,n):
+  delta_y=(dif_y(x_in,y_in))*delta_x
+  x_in=x_in+delta_x
+  x_array.append(x_in)
+  y_in=y_in+delta_y
+  y_array.append(y_in)
+
+for i in range(1, len(x_array)):
+  print(f"{i}. x:{x_array[i]}   y:{y_array[i]}")
+
+plt.plot(x_array,y_array)
+plt.savefig('PlotGraph.png')
