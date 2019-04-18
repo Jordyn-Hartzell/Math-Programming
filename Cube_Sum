@@ -1,0 +1,11 @@
+import math
+
+for i in range(100, 1000):
+  digit1=(i//100)
+  digit2=(i//10%10)
+  digit3=(i%10)
+  #print(digit1, digit2, digit3)
+  s=digit1**3+digit2**3+digit3**3
+  #print(s)
+  if s==i:
+    print(f"{i} is the sum of the cube of it's digits")
