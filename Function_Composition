@@ -1,0 +1,20 @@
+# define function for f(g(x))
+def fg(x):
+  fg=3*(x**2-7)+4
+  return fg
+
+# define function for g(f(x))
+def gf(x):
+  gf=(3*x+4)**2-7
+  return gf
+
+# display f(x) and g(x)
+print('f(x)=3x+4')
+print('g(x)=x^2-7\n')
+
+# obtain user input for x-value
+x=float(input('What is your x-value?'))
+
+# display results of compositions
+print(f'\nf(g({x}))={fg(x)}')
+print(f'g(f({x}))={gf(x)}')
