@@ -1,0 +1,12 @@
+# obtain user input for number to multiple
+num=int(input("Which number would you like to see a multiplication table for?"))
+
+#obtain user input for number of multiples
+mult=int(input(f"How many multiples of {num} would you like?"))
+
+# iterate through number of multiples
+for i in range(mult):
+  # multiply input number by current iteration
+  term=num*(i+1)
+  # display results
+  print(f"{num} x {i+1} = {term}")
