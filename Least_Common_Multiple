@@ -1,0 +1,16 @@
+def gcd(a,b,r):
+  while r>0:
+    a=b
+    b=r
+    r=a%b
+  return b
+
+print("This program will find the LCM of two integers.\n")
+num1=int(input("First integer:"))
+num2=int(input("Second integer:"))
+
+r=num1%num2
+
+lcm=(num1*num2)/gcd(num1,num2,r)
+
+print(f"\nLCM({num1},{num2})={lcm}")
