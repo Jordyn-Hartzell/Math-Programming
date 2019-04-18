@@ -1,0 +1,20 @@
+# for i from 100 to 999
+for i in range(100,1000):
+  # obtain individual digits for three digit numbers
+  digit1=(i//100)
+  digit2=(i//10%10)
+  digit3=(i%10)
+
+  # calculate product of digits
+  digit_product=digit1*digit2*digit3
+  #print(digit1, digit2, digit3, digit_product)
+
+  # test if digit product is 0
+  if digit_product!=0:
+    # if digit product is not 0
+    # test if number is evenly divisible by digit product, i.e.,
+    # test if the quotient is an integer
+    if i/digit_product==int(i/digit_product):
+      # display results
+      print(f"{i} is divisible by the product of it's digits")
+
