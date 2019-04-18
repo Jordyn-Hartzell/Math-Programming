@@ -1,0 +1,18 @@
+def fib(n):
+  if n==1 or n==2:
+    return 1
+  else:
+    a=1
+    b=1
+    for i in range(n-2):
+      c=a+b
+      a=b
+      b=c
+  return c
+
+n=1
+
+while fib(n)<10**6:
+  n+=1
+
+print(f'The first Fibonacci number larger than one million is {fib(n)} at term {n}.')
