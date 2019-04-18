@@ -1,0 +1,63 @@
+import math
+
+# define function to determine if value is a perfect square
+def is_square(x):
+  # test if square root is an integer
+  if math.sqrt(x)==int(math.sqrt(x)):
+    # if value is square, return True
+    #print('value is a square')
+    return True
+  else:
+    # if value is not square, return False
+    #print('value is not a square')
+    return False
+
+# define function to test b value
+def b_test(a, b, c):
+  # test if b is the product of 2 * the square root of a and c
+  if abs(b)!=2*math.sqrt(a)*math.sqrt(c):
+    # if value is not equivalent to required value, return false
+    return False
+  else:
+    # if value is equivalent to required value, return true
+    return True
+
+# define function to calculate the binomial square of a trinomial
+def binomial_square(a, b, c):
+  # calculate square root of a and c
+  sqrt_a=math.sqrt(a)
+  sqrt_c=math.sqrt(c)
+
+  # test if b is greater or less than 0
+  if b<0:
+    # if b<0, terms are subtracted
+    print(f'The binomial square is: ({sqrt_a}x-{sqrt_c})')
+  else:
+    # if b>0, terms are added
+    print(f'The binomial square is: ({sqrt_a}x+{sqrt_c})')
+  return
+
+# obtain user input for a, b, and c
+print('We will evaluate trinomials of the form ax^2+bx+c.\n')
+a=int(input('Input an integer value for a:'))
+b=int(input('Input an integer value for b:'))
+c=int(input('Input an integer value for c:'))
+
+# display trinomial
+print(f'\nThe trinomial is: {a}x^2+{b}x+{c}')
+
+# test if given values form a perfect square trinomial
+if is_square(a) and is_square(c):
+  # if a and c are perfect squares, continue test
+  #print('perfect squares')
+  if b_test(a, b, c):
+    # if b is the correct value, calculate the binomial square
+    #print('b passes')
+    binomial_square(a, b, c)
+  else:
+    # if b fails test, not a perfect square trinomial
+    print('B fails, so not a perfect square trinomial.')
+else:
+  # if a or c are not perfect squares, not a perfect square trinomial
+  print("Values a and/or c not perfect squares, so not a perfect square trinomial.")
+
