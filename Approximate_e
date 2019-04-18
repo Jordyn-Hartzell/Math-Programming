@@ -1,0 +1,21 @@
+import math
+
+def factorial(n):
+  y=1
+  for i in range(1,n+1):
+    y=y*i
+  return y
+
+d=int(input("How many decimal places of accuracy do you need?"))
+s=1
+n=1
+
+
+while 1/factorial(n) > 10**(-d-1):
+  s+=1/factorial(n)
+  print(s)
+  n+=1
+
+
+print(f"Note that e={math.e}.")
+print(f"We get an approximation of {s} when we use the first {n} terms.")
