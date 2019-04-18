@@ -1,0 +1,12 @@
+num1=0
+num2=1
+fib_sum=0
+
+while num2 < 4000000:
+  if num2%2==0:
+    fib_sum+=num2
+  next_term=num1+num2
+  num1=num2
+  num2=next_term
+
+print(f'The sum of the even fibonacci terms less than 4,000,000 is: {fib_sum}')
