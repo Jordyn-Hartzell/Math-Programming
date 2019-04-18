@@ -1,0 +1,15 @@
+import math
+
+# obtain user inputs for radius and height
+radius=float(input('What is the radius of the base of the cone?'))
+height=float(input('What is the height of the cone?'))
+
+# compute cone volume, lateral surface area, & total surface area
+volume=math.pi*(radius**2)*(height/3)
+lateral_surface=math.pi*radius*math.sqrt(height**2+radius**2)
+total_surface=math.pi*radius*(radius+math.sqrt(height**2+radius**2))
+
+# output results of computations
+print(f'Cone Volume: {volume}')
+print(f'Cone Lateral Surface Area: {lateral_surface}')
+print(f'Cone Total Surface Area: {total_surface}')
