@@ -1,0 +1,28 @@
+# Test inputs: $120,000, 5%, 30 years, $50 extra payment
+# Saved should be: +$19,000
+
+loan=float(input("Loan Amount: "))
+rate=float(input("Interest rate: "))
+years=int(input("Length (years): "))
+extra_pmt=float(input("Extra payment: "))
+
+monthly_rate = rate / 12 / 100
+pmt = (monthly_rate*loan)/(1-(1+monthly_rate)**(-years*12))
+print(f"Monthly Payment: {round(pmt,2)+50}")
+
+remaining=loan
+month=1
+
+while remaining>0:
+  interest=round(remaining*(monthly_rate),2)
+  remaining=round(remaining-(pmt+extra_pmt-interest),2)
+  print(f"Month {month}")
+  month+=1
+  print(f"Payment:{round(pmt+extra_pmt,2)} \tInterest: {interest} \tPrincipal: {round((pmt-interest),2)}")
+
+total_payment=years*12*pmt
+reduced_payment=((month-1)*(pmt+extra_pmt)+remaining)
+saved=total_payment-reduced_payment
+
+print(f"\nProjected Loan Payments: ${total_payment} \t Actual Total Payments: ${reduced_payment}")
+print(f"\nYou will save ${round(saved,2)} by paying ${extra_pmt} extra a month.")
