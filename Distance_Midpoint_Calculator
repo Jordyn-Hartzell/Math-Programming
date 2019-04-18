@@ -1,0 +1,22 @@
+import math
+
+# obtain user input for the x and y values
+x_1=float(input('What is the first x coordinate?'))
+y_1=float(input('What is the first y coordinate?'))
+x_2=float(input('What is the second x coordinate?'))
+y_2=float(input('What is the second y coordinate?'))
+
+#print points A and B
+print(f'Point A: {x_1,y_1}')
+print(f'Point B: {x_2,y_2}')
+
+# compute the distance using the given input values
+distance=math.sqrt((x_2-x_1)**2+(y_2-y_1)**2)
+
+# compute the midpoint using the given inputs
+x_midpoint=(x_2+x_1)/2
+y_midpoint=(y_2+y_1)/2
+
+# print the results of the computations
+print(f'Length of segment AB: {distance}')
+print(f'Midpoint: ({x_midpoint},{y_midpoint})')
