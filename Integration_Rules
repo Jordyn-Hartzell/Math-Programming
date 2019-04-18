@@ -1,0 +1,25 @@
+import math
+
+def f(x):
+  y=math.tan(x)-math.sqrt(x)
+  return y
+
+lower_bound=float(input("Lower bound: "))
+upper_bound=float(input("Upper bound: "))
+n=int(input("Number of rectangles: "))
+delta_x=(upper_bound-lower_bound)/n
+left_sum=0
+right_sum=0
+midpoint_sum=0
+
+for i in range(n):
+  left_sum+=f(lower_bound+i*delta_x)*delta_x
+  right_sum+=f(lower_bound+delta_x+i*delta_x)*delta_x
+  midpoint_sum+=f(lower_bound+(delta_x/2)+i*delta_x)*delta_x
+
+trapezoidal_sum=(left_sum+right_sum)/2
+
+print(f"Lefthand approximation: {left_sum}")
+print(f"Righthand approximation: {right_sum}")
+print(f"Midpoint approximation: {midpoint_sum}")
+print(f"Trapezoidal approximation: {trapezoidal_sum}")
