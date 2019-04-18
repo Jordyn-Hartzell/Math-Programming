@@ -1,0 +1,52 @@
+import math
+
+# define function to find the next term in the series
+def pi_term(n, sign):
+  # term is the sign * 4 divided by the odd numbers
+  term=sign*(4/(2*n+1))
+  return term
+
+# initiate n, sign to alternate, pi approximation, and # for iterations
+n=0
+sign=1
+pi_approx=0
+
+# obtain user input for number of decimals
+decimal=int(input("How many decimal places of accuracy would you like for pi?"))
+
+# display instructions
+print(f"\nWe will find how many iterations it takes to achieve {decimal} decimal places of accuracy of pi using the series for arctan(1)*4.")
+
+# while (to four decimal places) the pi approximation is not equal to pi
+while (round(pi_approx,decimal))!=(round(math.pi,decimal)):
+  # add next term to pi approximation
+  pi_approx+=pi_term(n, sign)
+  # test statement for terms in sum
+  #print('{0:.4f}'.format(pi_approx))
+  # increment n
+  n+=1
+  # change sign
+  sign=-sign
+
+# display results
+print(f"\nIt took {n} iterations to achieve {decimal} decimal places of accuracy for pi which is {round(math.pi,decimal)}.")
+
+
+
+
+
+# a quick approach to this problem in a different way
+print("\n\n\n\nThe following portion is a quick attempt to use the mathematical approach to the problem. Ignore this!")
+
+m=0
+pi2 = 0
+sign2=1
+
+while abs(pi_term(m, sign2)) > 10**(-decimal):
+  pi2+=pi_term(m, sign2)
+  m+=1
+  #print(pi2)
+  sign2=-sign2
+
+print(f"\nNote pi={math.pi}.")
+print(f"It took {m} iterations to obtain {decimal} degrees of accuracy which is {pi2}.")
