@@ -1,0 +1,18 @@
+loan=float(input("Loan Amount: "))
+rate=float(input("Interest rate: "))
+years=int(input("Length (years): "))
+
+monthly_rate = rate / 12 / 100
+pmt = (monthly_rate*loan)/(1-(1+monthly_rate)**(-years*12))
+print(f"Monthly Payment: {round(pmt,2)}")
+
+remaining=loan
+
+for i in range(12*years+1):
+  interest=round(remaining*monthly_rate,2)
+  remaining=round(remaining-(pmt-interest),2)
+  print(f"Month: {i} \tInterest: {round(interest,2)} \tPrincipal: {round((pmt-interest),2)}")
+
+total=pmt*i
+int_paid=total-loan
+print(round(total,2), round(int_paid,2))
