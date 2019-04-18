@@ -1,0 +1,21 @@
+import math
+
+def f(x):
+  y=x-math.cos(x)
+  return y
+
+def der_f(x):
+  z=1+math.sin(x)
+  return z
+
+x=float(input("What is your inital guess for x?"))
+accuracy=int(input("How many decimal places of accuracy?"))
+y=x-f(x)/der_f(x)
+
+while abs(y-x) > 10**(-accuracy-1):
+  z=y-(f(y)/der_f(y))
+  x=y
+  y=z
+  print(f(x))
+
+print(f"\nx={x}")
