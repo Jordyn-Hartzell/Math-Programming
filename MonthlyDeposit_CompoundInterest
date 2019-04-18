@@ -1,0 +1,13 @@
+p=float(input("How much are you depositing every month? $"))
+r_per=int(input("What is the interest rate? "))
+n=int(input("How many times is it compounded yearly? "))
+t=int(input("How many years? "))
+
+r=r_per/100
+rate=1+(r/n)
+total=0
+
+for i in range(n*t):
+  total=total*rate+p
+
+print(f"\nBalance after {t} years: ${round(total, 2)}")
