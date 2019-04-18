@@ -1,0 +1,14 @@
+print("This program will find the GCD of two integers.\n")
+num1=int(input("First integer:"))
+num2=int(input("Second integer:"))
+
+r=num1%num2
+a=num1
+b=num2
+
+while r>0:
+  a=b
+  b=r
+  r=a%b
+
+print(f"\nGCD({num1},{num2})={b}")
