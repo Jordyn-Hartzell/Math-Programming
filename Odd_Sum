@@ -1,0 +1,10 @@
+import math
+
+n=int(input('How many odd number should I add up?'))
+
+s=0
+
+for i in range(n):
+  s += 2*i+1
+
+print(f'The sum of the first {n} odd integers is {s}.')
