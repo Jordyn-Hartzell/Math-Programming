@@ -1,0 +1,25 @@
+# define function to establish current term of harmonic series
+def sigmasum(n):
+  term=1/n
+  return term
+
+# display program function
+print("This program will find the kth term of the harmonic series such that the sum is greater than a given integer M.")
+
+# obtain user input for m
+m=float(input("\nWhat M would you like to find?"))
+
+# initiate n and total
+n=0
+total=0
+
+# while total is less than m
+while total<m:
+  # increment n
+  n+=1
+  #add current term to total
+  total+=sigmasum(n)
+  #print(total)
+
+#display results
+print(f'\nThe sum is greater than {m} at {n} and equals {total}.')
