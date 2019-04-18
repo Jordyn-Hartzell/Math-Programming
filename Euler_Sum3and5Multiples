@@ -1,0 +1,8 @@
+sum_multiples=0
+
+for x in range(1000):
+  if x%3 == 0 or x%5 == 0:
+    sum_multiples+=x
+    #print(x)
+
+print(f"The sum of multiples of 3 and 5 below 1000 is {sum_multiples}.")
