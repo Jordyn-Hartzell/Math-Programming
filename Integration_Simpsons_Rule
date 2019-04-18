@@ -1,0 +1,28 @@
+import math
+
+def f(x):
+  y=(x**3+1)**(1/2)
+  return y
+
+a=int(input("What is the lower limit?"))
+b=int(input("What is the upper limit?"))
+
+n=1
+while n%2>0:
+  n=int(input("How many rectangles (even value)?"))
+
+h=(b-a)/n
+
+integral_sum=float()
+
+for i in range(n+1):
+  if i==0 or i==(n):
+    integral_sum+=f(h*i+a)
+  elif i%2==1:
+    integral_sum+=f(h*i+a)*4
+  elif i%2==0:
+    integral_sum+=f(h*i+a)*2
+
+integral_sum=(h/3)*integral_sum
+
+print(integral_sum)
