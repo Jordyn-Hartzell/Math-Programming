@@ -1,0 +1,15 @@
+def fib(n):
+  if n==1 or n==2:
+    return 1
+  else:
+    a=1
+    b=1
+    for i in range(n-2):
+      c=a+b
+      a=b
+      b=c
+  return c
+
+n=int(input("Which Fibonacci number would you like?"))
+
+print(f'The value of term {n} is {fib(n)}.')
